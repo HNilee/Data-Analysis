@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import joblib
 import numpy as np
-from prediction import predict
+from model import predict
 import datetime
 
 st.title("Global Store Sales Prediction")
@@ -28,7 +28,7 @@ st.text("")
 if st.button("Predict Purchase") :
     input = np.array([[day, month, year, weekDay]])
     result = predict(input)
-    st.success("Total Pembelian: ${result[0]:.2f}")
+    st.success(f"Total Pembelian: ${result[0]:.2f}")
 
 st.text("")
 st.markdown("---")
